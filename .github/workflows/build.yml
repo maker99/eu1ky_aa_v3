@@ -22,7 +22,7 @@ jobs:
       uses: fiam/arm-none-eabi-gcc@v1
       with:
         # GNU Embedded Toolchain for Arm release name, in the V-YYYY-qZ format (e.g. "9-2019-q4")
-        release: $GCC_VERSION
+        release: "9-2019-q4"
         # Directory to unpack GCC to. Defaults to a temporary directory.
         directory: $GCC_PATH
         
