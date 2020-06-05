@@ -11,7 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        GCC_PATH: $HOME/arm-gcc-toolchain
         GCC: arm-none-eabi-gcc
         
     steps:
@@ -20,8 +19,6 @@ jobs:
       with:
         # GNU Embedded Toolchain for Arm release name, in the V-YYYY-qZ format (e.g. "9-2019-q4")
         release: 9-2019-q4
-        # Directory to unpack GCC to. Defaults to a temporary directory.
-        directory: $GCC_PATH
         
     - name: show config
       run: |
@@ -33,7 +30,6 @@ jobs:
         pwd
         ls -al 
         printenv
-        ls -al $GCC_PATH
         
     - name: check arm toolchain
       run: |
