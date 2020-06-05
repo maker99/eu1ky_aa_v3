@@ -29,10 +29,16 @@ jobs:
         cd arm-gcc-toolchain
         ls -al
         tar -jxf gcc.tar.bz2 --strip=1
+        ls -al 
         export PATH=$PWD/arm-gcc-toolchain/bin:$PATH
         echo "arm environment:"
-        arm-none-eabi-gcc --version
+        printenv
         ls -al arm-gcc-toolchain
+        
+        
+    - name: check arm toolchain
+      run: |
+       arm-none-eabi-gcc --version
 
     - name: make it
       run: |
