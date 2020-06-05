@@ -25,14 +25,15 @@ jobs:
       run: |    
         pwd
         mkdir -p arm-gcc-toolchain
-        wget -O ./arm-gcc-toolchain/gcc.tar.bz2 $GCC_URL
+        curl --fail --silent --show-error $GCC_URL --output ./arm-gcc-toolchain/gcc.tar.bz2
         cd arm-gcc-toolchain
         tar -jxf gcc.tar.bz2 --strip=1
-        popd
         export PATH=$PWD/arm-gcc-toolchain/bin:$PATH
         echo "arm environment:"
         arm-none-eabi-gcc --version
         ls -al arm-gcc-toolchain
 
     - name: make it
-      run: echo make 
+      run: |
+        echo $PATH
+        echo make 
