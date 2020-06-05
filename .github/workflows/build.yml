@@ -25,7 +25,7 @@ jobs:
       run: |    
         pwd
         mkdir -p arm-gcc-toolchain
-        curl --fail --silent --show-error $GCC_URL --output ./arm-gcc-toolchain/gcc.tar.bz2
+        wget -nv  $GCC_URL -O./arm-gcc-toolchain/gcc.tar.bz2
         cd arm-gcc-toolchain
         ls -al
         tar -jxf gcc.tar.bz2 --strip=1
